@@ -1,0 +1,32 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: .5em;
+    background-color: #FFEECC;
+}
+
+.navbar img{
+    width: 20%;
+}
+
+.NavItens{
+    display: flex;
+}
+
+.NavItens li{
+    margin-right: 0.5em;
+    list-style: none;
+}
+
+.NavItens a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #F78F53;
+    transition: .5s;
+}
+
+.NavItens a:hover{
+    color: #F04775;
+}

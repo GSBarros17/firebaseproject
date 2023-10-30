@@ -4,11 +4,11 @@ import ImgLogo from "../img/Logo_nome.png"
 
 export default function Home () {
   return (
-    <nav>
+    <nav className={styles.navbar}>
         <Link to="/">
             <img src={ImgLogo} alt="" />
         </Link>
-        <ul>
+        <ul className={styles.NavItens}>
             <li>
                 <Link to="/">Home</Link>
             </li>

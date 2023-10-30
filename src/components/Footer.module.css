@@ -1,0 +1,13 @@
+.footerContainer{
+    background-color: #FFEECC;
+    text-align: center;
+    padding: 1em;
+}
+
+.footerContainer h3{
+    color: #c5375d;
+}
+
+.footerContainer p{
+    color: #c5375d;
+}
