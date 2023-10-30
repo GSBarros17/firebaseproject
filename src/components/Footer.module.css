@@ -4,10 +4,15 @@
     padding: 1em;
 }
 
+.footerContainer img{
+    width: 40px;
+}
+
 .footerContainer h3{
     color: #c5375d;
 }
 
 .footerContainer p{
     color: #c5375d;
+    margin: 0em;
 }
