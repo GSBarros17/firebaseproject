@@ -1,9 +1,16 @@
 import './App.css';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
 function App() {
   return (
     <div className="container">
-     <h1>ZEN BLOG</h1>
+     <BrowserRouter>
+        <div className="container">
+          <Routes>
+            
+          </Routes>
+        </div>
+     </BrowserRouter>
     </div>
   );
 }
