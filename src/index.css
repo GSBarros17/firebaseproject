@@ -42,6 +42,7 @@ input{
   border: none;
   border-radius: 25px;
   padding: 1em 0.5em;
+  transition: 0.5s;
 }
 
 input:focus{
