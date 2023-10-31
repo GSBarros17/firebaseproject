@@ -1,0 +1,13 @@
+.registerContainer{
+    text-align: center;
+    padding: 1em;
+}
+
+.registerContainer h2{
+    font-family: 'Playpen Sans', cursive;
+    color: #c5375d;
+}
+
+.registerContainer p {
+    color: #5a5a5a;
+}

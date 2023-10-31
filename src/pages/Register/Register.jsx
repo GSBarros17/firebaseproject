@@ -3,9 +3,9 @@ import styles from "./Register.module.css"
 
 export default function Register(){
     return(
-        <div>
+        <div className={styles.registerContainer}>
             <h2>Cadastre-se e faça parte desta comunidade</h2>
-            <p>crie sua conta para realizar postagens</p>
+            <p>Crie sua conta para realizar postagens</p>
             <form>
                 <label htmlFor="">
                     <span>Nome:</span>
