@@ -2,18 +2,46 @@ import { useState, useEffect } from "react"
 import styles from "./Register.module.css"
 
 export default function Register(){
+    
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [error, setError] = useState("")
+    
+    function handleSubmit(e){
+        e.preventDefault()
+
+        setError("")
+
+        const user = {
+            name,
+            email,
+            password
+        }
+
+        if(password !== confirmPassword){
+            setError("As senhas precisam ser iguais!")
+            return
+        }
+
+        console.log(user)
+    }
+
     return(
         <div className={styles.registerContainer}>
             <h2>Cadastre-se e faça parte desta comunidade</h2>
             <p>Crie sua conta para realizar postagens</p>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="">
                     <span>Nome:</span>
                     <input 
                         type="text" 
                         name="nameUser" 
                         required 
-                        placeholder="Digite seu nome completo" 
+                        placeholder="Digite seu nome completo"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
                 </label>
                 <label htmlFor="">
@@ -22,7 +50,9 @@ export default function Register(){
                         type="email" 
                         name="emailUser" 
                         required 
-                        placeholder="Digite seu e-mail" 
+                        placeholder="Digite seu e-mail"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </label>
                 <label htmlFor="">
@@ -31,7 +61,9 @@ export default function Register(){
                         type="password"
                         name="passwordUser" 
                         required 
-                        placeholder="Digite sua senha" 
+                        placeholder="Digite sua senha"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </label>
                 <label htmlFor="">
@@ -40,11 +72,14 @@ export default function Register(){
                         type="password"
                         name="confirmPasswordUser" 
                         required 
-                        placeholder="Confirme a sua senha" 
+                        placeholder="Confirme a sua senha"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </label>
                 <button className={styles.btnForm}>Cadastrar</button>
             </form>
+            {error && <p className={styles.err}>{error}</p>}
         </div>
         
     )
