@@ -39,7 +39,7 @@ export default function Login(){
             <h1>Área de login</h1>
             <form onSubmit={handleSubmit}>
                 <h2>Entrar</h2>
-                <p>Faça o login para acessar!</p>
+                <p>Faça o login para acessar sua conta!</p>
                 <label htmlFor="">
                     <span>E-mail:</span>
                     <input 
