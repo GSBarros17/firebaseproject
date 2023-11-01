@@ -43,6 +43,8 @@ export default function useAuthentication (){
                 displayName: data.displayName
             })
 
+            setLoading(false)
+
             return user
 
         } catch (error) {
@@ -56,11 +58,10 @@ export default function useAuthentication (){
             } else {
                 systemErrorMessage = "Ocorreu um erro, tente novamente em alguns minutos."
             }
-
+            setLoading(false)
             setError(systemErrorMessage)
 
         }
-        setLoading(false)
     }
 
     useEffect(() => {

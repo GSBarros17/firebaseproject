@@ -91,7 +91,8 @@ export default function Register(){
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </label>
-                <button className={styles.btnForm}>Cadastrar</button>
+                {!loading && <button className={styles.btnForm}>Cadastrar</button>}
+                {loading && <button className={styles.btnForm}>Aguarde...</button>}
             </form>
             {error && <p className={styles.err}>{error}</p>}
         </div>
