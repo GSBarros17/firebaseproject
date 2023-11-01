@@ -29,6 +29,16 @@ export default function Navbar () {
                 </li>
              </>
             )}
+            {user && (
+             <>
+                <li>
+                    <Link to="/dashboard">Painel</Link>
+                </li>
+                <li>
+                    <Link to="/createpost">Novo Post</Link>
+                </li>
+             </>
+            )}
             <li>
                 <Link to="/about">Sobre</Link>
             </li>
