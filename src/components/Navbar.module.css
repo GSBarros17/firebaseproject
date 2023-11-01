@@ -24,9 +24,9 @@
     font-weight: bold;
     font-size: 1em;
     color: #e06e2c;
-    transition: .5s;
 }
 
 .NavItens a:hover{
-    color: #c5375d;
+    border-left: 2px solid #e06e2c;
+    border-bottom: 2px solid #e06e2c;
 }
