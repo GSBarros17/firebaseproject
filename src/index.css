@@ -49,6 +49,24 @@ input:focus{
   opacity: 1;
 }
 
+.btnForm{
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  border: 1px solid #c5375d;
+  margin-top: 1em;
+  font-weight: bold;
+  color: #c5375d;
+  cursor: pointer;
+  transition: 1s;
+
+}
+
+.btnForm:hover{
+  background-color: #c5375d;
+  color: #f9f9f9;
+  box-shadow: 0px 0px 8px 0px #ffffff;
+}
+
 .err{
   width: 15%;
   margin: 1em auto;

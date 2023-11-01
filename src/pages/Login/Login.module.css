@@ -1,0 +1,19 @@
+.containerLogin{
+    text-align: center;
+    padding: 1em;
+}
+
+.containerLogin h1{
+    color: #c5375d;
+    font-family: 'Playpen Sans', cursive;
+}
+
+.containerLogin h2{
+    color: #f9f9f9;
+    font-size: 2em;
+    margin-top: 0em;
+}
+
+.containerLogin p{
+    color: #f9f9f9;
+}
