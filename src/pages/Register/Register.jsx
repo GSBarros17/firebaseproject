@@ -94,7 +94,7 @@ export default function Register(){
                 {!loading && <button className={styles.btnForm}>Cadastrar</button>}
                 {loading && <button className={styles.btnForm}>Aguarde...</button>}
             </form>
-            {error && <p className={styles.err}>{error}</p>}
+            {error && <p className="err">{error}</p>}
         </div>
         
     )

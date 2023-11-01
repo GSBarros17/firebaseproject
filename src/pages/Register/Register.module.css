@@ -26,14 +26,4 @@
     box-shadow: 0px 0px 8px 0px #ffffff;
 }
 
-.err{
-    width: 15%;
-    margin: 1em auto;
-    background-color: #fe9595;
-    font-weight: bold;
-    color: #d61212;
-    border-radius: 25px;
-    border: 1px solid #d61212;
-    padding: 0.2em 0.5em;  
-}
 
