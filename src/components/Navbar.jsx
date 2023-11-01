@@ -9,6 +9,7 @@ import ImgLogo from "../img/Logo_nome.png"
 export default function Navbar () {
 
   const {user} = useAuthValue()
+  const {logout} = useAuthentication()
 
   return (
     <nav className={styles.navbar}>
@@ -42,6 +43,11 @@ export default function Navbar () {
             <li>
                 <Link to="/about">Sobre</Link>
             </li>
+            {user && (
+                <li>
+                    <button onClick={logout}>Sair</button>
+                </li>
+            )}  
         </ul>
     </nav>
   )

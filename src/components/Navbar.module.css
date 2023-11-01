@@ -19,14 +19,24 @@
     list-style: none;
 }
 
-.NavItens a{
+.NavItens a, .NavItens Button{
     text-decoration: none;
     font-weight: bold;
     font-size: 1em;
     color: #e06e2c;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .NavItens a:hover{
-    border-left: 2px solid #e06e2c;
-    border-bottom: 2px solid #e06e2c;
+    color: #c5375d;
+    text-decoration: underline;
+}
+
+.NavItens Button:hover{
+    color: #c5375d;
+    text-decoration: underline;
 }
