@@ -66,6 +66,33 @@ export default function useAuthentication (){
         }
     }
 
+    //login - sing in
+
+    const login = async(data) =>{
+
+        checkIfIsCancelled()
+
+        setLoading(true)
+        setError(false)
+        try {
+           
+            await signInWithEmailAndPassword(auth, data.email, data.password)
+            setLoading(true)
+        } catch (error) {
+            let systemErrorMessage;
+
+            if(error.message.includes("invalid")){
+                systemErrorMessage = "Usuário não cadastrado ou senha incorreta."
+            } else{
+                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde."
+            }
+            setLoading(false)
+            setError(systemErrorMessage)
+           
+        }
+
+    }
+
     //logout - sing out
 
     const logout = () => {
@@ -84,6 +111,7 @@ export default function useAuthentication (){
         createUser,
         error,
         loading,
-        logout
+        logout,
+        login
     }
 }
