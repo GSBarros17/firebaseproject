@@ -37,10 +37,10 @@ export default function CreatePost(){
                 <label>
                     <span>Imagem:</span>
                     <input 
-                        type="file"
-                        accept="image/*"
-                        name="image" 
+                        type="text" 
+                        name="imagemURL" 
                         required 
+                        placeholder="Cole uma URL de imagem"
                         value={image}
                         onChange={(e) => setImage(e.target.value)}
                     />
@@ -49,8 +49,6 @@ export default function CreatePost(){
                     <span>Conteúdo:</span>
                     <textarea 
                         name="body" 
-                        cols="30" 
-                        rows="10"
                         placeholder="Escreva sobre o que você quer falar"
                         required 
                         value={body}

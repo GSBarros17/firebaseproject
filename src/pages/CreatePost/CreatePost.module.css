@@ -1,0 +1,14 @@
+
+
+.uploadImg input {
+    color: #000000;
+    cursor: pointer;
+    border: 5px dotted #9f9f9f;
+    box-sizing: border-box;
+}
+
+/*
+input[type="file"]{
+    display: none;
+}
+*/
