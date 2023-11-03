@@ -55,6 +55,17 @@ export default function CreatePost(){
                         onChange={(e) => setBody(e.target.value)}
                     ></textarea>
                 </label>
+                <label>
+                    <span>Tags:</span>
+                    <input 
+                        type="text" 
+                        name="tags" 
+                        required 
+                        placeholder="Insira as tags separadas por virgulas"
+                        value={tags}
+                        onChange={(e) => setTags(e.target.value)}
+                    />
+                </label>
                 <button>Criar post</button>
             </form>
         </div>
