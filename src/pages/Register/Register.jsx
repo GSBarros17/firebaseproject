@@ -44,7 +44,7 @@ export default function Register(){
 
     return(
         <div className={styles.registerContainer}>
-            <h2>Cadastre-se e faça parte desta comunidade</h2>
+            <h1>Cadastre-se e faça parte desta comunidade</h1>
             <p>Crie sua conta para realizar postagens</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="">

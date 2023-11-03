@@ -19,7 +19,7 @@ export default function CreatePost(){
     }
 
     return(
-        <div>
+        <div className={styles.createPostContainer}>
             <h1>Criar post</h1>
             <p>Compartilhe suas experiências com outras pessoas!</p>
             <form onSubmit={handleSubmit}>

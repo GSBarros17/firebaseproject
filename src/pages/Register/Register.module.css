@@ -3,9 +3,12 @@
     padding: 1em;
 }
 
-.registerContainer h2{
+.registerContainer h1{
     font-family: 'Playpen Sans', cursive;
     color: #c5375d;
 }
 
+.registerContainer p{
+    color: #7c7c7c;
+}
 

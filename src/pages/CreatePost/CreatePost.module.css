@@ -1,5 +1,19 @@
 
 
+.createPostContainer{
+    text-align: center;
+    padding: 1em;
+}
+
+.createPostContainer h1{
+    color: #c5375d;
+    font-family: 'Playpen Sans', cursive;
+}
+
+.createPostContainer p{
+    color: #7c7c7c;
+}
+
 .uploadImg input {
     color: #000000;
     cursor: pointer;
