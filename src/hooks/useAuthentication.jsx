@@ -42,12 +42,13 @@ export default function useAuthentication (){
             )
 
             await updateProfile(user, {
-                displayName: data.displayName
+                displayName: data.name
             })
 
             setLoading(false)
 
             return user
+
 
         } catch (error) {
 

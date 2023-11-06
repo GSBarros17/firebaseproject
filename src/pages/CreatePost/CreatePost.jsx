@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useNavigate} from "react-router-dom"
 import { useAuthValue } from "../../context/AuthContext"
-import useAuthentication from "../../hooks/useAuthentication"
+import { useAuthentication } from "../../hooks/useAuthentication"
+import { useInsertDocument } from "../../hooks/useInsertDocument"
 import styles from "./CreatePost.module.css"
 
 export default function CreatePost(){
@@ -12,10 +13,29 @@ export default function CreatePost(){
     const [tags, setTags] = useState("")
     const [formError, setFormError] = useState("")
 
+    const {insertDocument, response} = useInsertDocument("posts")
+    const {user} = useAuthValue()
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        console.log(image)
+        setFormError("")
+
+        //validar a URL da imagem
+
+        //array de tags
+
+        //checar todos os valores   
+
+        insertDocument({
+            title,
+            image,
+            body,
+            tags,
+            uid: user.uid,
+            createdBy: user.displayName,
+        })
+        
+        //redirect to home page
     }
 
     return(
@@ -66,8 +86,10 @@ export default function CreatePost(){
                         onChange={(e) => setTags(e.target.value)}
                     />
                 </label>
-                <button>Criar post</button>
+                {!response.loading && <button className="btnForm">Cadastrar</button>}
+                {response.loading && <button className="btnForm">Aguarde...</button>}
             </form>
+            {response.error && <p className="err">{response.error}</p>}
         </div>
     )
 }
