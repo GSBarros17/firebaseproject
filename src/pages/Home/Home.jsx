@@ -28,12 +28,12 @@ export default function Home () {
         />
         <button type="button"><BsSearch/></button>
       </form>
-      <div>
+      <div className={styles.postsContainer}>
         <h2>Posts...</h2>
         {posts && posts.length === 0 && (
           <div className={styles.noPosts}>
             <p>Não foram encontrados posts</p>
-            <Link to="/createPost" className="btnForm">Criar primeiro post</Link>
+            <Link to="/createPost">Criar primeiro post</Link>
           </div>
         )}
       </div>
