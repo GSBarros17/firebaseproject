@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
 import { useAuthValue } from "../../context/AuthContext"
 import { useFetchDocuments } from "../../hooks/useFetchDocuments"
+import PostsDetails from "../../components/PostsDetails"
 
 
 
@@ -32,7 +33,7 @@ export default function Home () {
       <div className={styles.postsContainer}>
         {loading && <p>Carregando...</p>}
         {posts && posts.map((post) => (
-          <h3>{post.title}</h3>
+          <PostsDetails key={post.id} post={post}/>
         ))}
         {posts && posts.length === 0 && (
           <div className={styles.noPosts}>

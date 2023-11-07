@@ -8,7 +8,7 @@ export default function PostsDetails({post}){
         <h2>{post.title}</h2>
         <p>{post.createdBy}</p>
         <div>
-            {post.tags.map((tag) => <p key={tag}><span>#</span>{tag}</p> )}
+            {post.tagsArray.map((tag) => <p key={tag}><span>#</span>{tag}</p> )}
         </div>
         <Link to={`/posts/$post.id`} className="btnForm">ler</Link>
     </div>
