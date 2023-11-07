@@ -3,6 +3,7 @@ import { BsSearch } from "react-icons/bs"
 import { useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
 import { useAuthValue } from "../../context/AuthContext"
+import { useFetchDocuments } from "../../hooks/useFetchDocuments"
 
 
 
@@ -10,7 +11,7 @@ export default function Home () {
   
   const {user} = useAuthValue()
   const [query, setQuery] = useState("")
-  const [posts] = useState([])
+  const {documents: posts, loading} = useFetchDocuments("posts") 
 
   const handleSubmit = (e) => {
     e.preventDefalt()
