@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useNavigate} from "react-router-dom"
 import { useAuthValue } from "../../context/AuthContext"
-import { useAuthentication } from "../../hooks/useAuthentication"
 import { useInsertDocument } from "../../hooks/useInsertDocument"
 import styles from "./CreatePost.module.css"
 

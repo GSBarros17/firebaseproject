@@ -9,17 +9,17 @@ import { useFetchDocuments } from "../../hooks/useFetchDocuments"
 
 export default function Home () {
   
-  const {user} = useAuthValue()
   const [query, setQuery] = useState("")
-  const {documents: posts, loading} = useFetchDocuments("posts") 
+  const { documents: posts, loading } = useFetchDocuments("posts")
+  console.log(posts)
 
   const handleSubmit = (e) => {
-    e.preventDefalt()
+    e.preventDefault()
   }
 
   return (
     <div className={styles.homeContainer}>
-      <h1>Bem vindo, <span>user.displayName</span></h1>
+      <h1>Bem vindo ao  <span>ZEN Blog</span></h1>
       <h2>Veja nossos posts mais recentes</h2>
       <form onSubmit={handleSubmit}>
         <input 
@@ -30,7 +30,10 @@ export default function Home () {
         <button type="button"><BsSearch/></button>
       </form>
       <div className={styles.postsContainer}>
-        <h2>Posts...</h2>
+        {loading && <p>Carregando...</p>}
+        {posts && posts.map((post) => (
+          <h3>{post.title}</h3>
+        ))}
         {posts && posts.length === 0 && (
           <div className={styles.noPosts}>
             <p>Não foram encontrados posts</p>
