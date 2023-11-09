@@ -1,7 +1,11 @@
 import styles from "./Search.module.css"
+import { useFetchDocuments } from "../../hooks/useFetchDocuments"
 
 export default function Search(){
     return (
-        <h1>Search</h1>
+        <div>
+            <h2>Search</h2>
+            <p>{search}</p>
+        </div>
     )
 }

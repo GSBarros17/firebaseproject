@@ -22,7 +22,6 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
             
             try {
                 let q
-                //search
                 //dashboard
 
                 if(search){
