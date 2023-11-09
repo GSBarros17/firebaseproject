@@ -12,7 +12,8 @@ export default function Home () {
   
   const [query, setQuery] = useState("")
   const { documents: posts, loading } = useFetchDocuments("posts")
-  console.log(posts)
+  
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -32,7 +33,7 @@ export default function Home () {
           placeholder="Ou busque por tags...." 
           onChange={(e) => setQuery(e.target.value)}  
         />
-        <button type="button"><BsSearch/></button>
+        <button><BsSearch/></button>
       </form>
       <div className={styles.postsContainer}>
         {loading && <p>Carregando...</p>}
