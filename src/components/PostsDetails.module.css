@@ -3,7 +3,7 @@
     flex-direction: column;
     border: 3px solid #c5375d;
     border-radius: 20px;
-    width: 60%;
+    width: 40%;
     margin-top: 1em;
     padding: 1em;
     background-image: linear-gradient(to bottom right, #c5375d, #e06e2c);
@@ -15,6 +15,7 @@
 
 .postsCard img{
     border-radius: 20px;
+    height: 300px;
     margin-bottom: 1em;
 }
 
