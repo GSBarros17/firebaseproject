@@ -1,11 +1,11 @@
 .searchContainer{
-    text-align: center;
     padding: 1em;
 }
 
 .searchContainer h1{
     color: #c5375d;
-    font-family: 'Playpen Sans', cursive; 
+    font-family: 'Playpen Sans', cursive;
+    text-align: center;
 }
 
 .searchPosts {
