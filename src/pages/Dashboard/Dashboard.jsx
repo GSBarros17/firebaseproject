@@ -8,13 +8,15 @@ export default function Dashboard(){
 
     const {user} = useAuthValue()
     const uid = user.uid
+    const name = user.displayName
+    const firstName = name.split(" ")[0]
    
     const posts = []
 
     return(
         <div>
             <h1>Painel</h1>
-            <p>Gerencie o seus posts</p>
+            <p><spam>{firstName}</spam>, gerencie o seus posts</p>
             {posts && posts.length === 0 ? (
                 <div className={styles.noPosts}>
                     <p>Você não possui post ainda</p>
