@@ -2,7 +2,6 @@ import styles from "./Home.module.css"
 import { BsSearch } from "react-icons/bs"
 import { useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
-import { useAuthValue } from "../../context/AuthContext"
 import { useFetchDocuments } from "../../hooks/useFetchDocuments"
 import PostsDetails from "../../components/PostsDetails"
 
@@ -12,7 +11,6 @@ export default function Home () {
   
   const [query, setQuery] = useState("")
   const { documents: posts, loading } = useFetchDocuments("posts")
-  
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
