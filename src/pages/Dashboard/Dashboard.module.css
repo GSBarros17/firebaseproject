@@ -1,0 +1,44 @@
+.dashboardContainer{
+    padding: 1em;
+    text-align: center;
+}
+
+.dashboardContainer h1{
+    color: #c5375d;
+    font-family: 'Playpen Sans', cursive; 
+    margin-bottom: 0;
+}
+
+.dashboardContainer p{
+    color: #606060;
+}
+
+.dashboardContainer spam{
+    color: #e06e2c;
+    font-weight: bold;
+}
+
+.noPosts{
+    text-align: center;
+}
+
+.noPosts p{
+    color: #606060;
+    margin-bottom: 2em;
+}
+
+.noPosts a{
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    border: 1px solid #c5375d;
+    margin-top: 1em;
+    font-weight: bold;
+    color: #c5375d;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.noPosts a:hover{
+    background-color: #c5375d;
+    color: #f9f9f9;
+}

@@ -14,13 +14,13 @@ export default function Dashboard(){
     const posts = []
 
     return(
-        <div>
+        <div className={styles.dashboardContainer}>
             <h1>Painel</h1>
             <p><spam>{firstName}</spam>, gerencie o seus posts</p>
             {posts && posts.length === 0 ? (
                 <div className={styles.noPosts}>
-                    <p>Você não possui post ainda</p>
-                    <Link to="/posts/create">Criar primeiro post</Link>
+                    <p>Você não possui post ainda...</p>
+                    <Link to="/createPost">Criar primeiro post</Link>
                 </div>
             ) : (
                 <div>
