@@ -27,7 +27,7 @@ export default function Home () {
 
   return (
     <div className={styles.homeContainer}>
-      {name && <h1>Bem vindo, <span>{firstName}</span></h1>}
+      {name && <h1>Bem vindo(a), <span>{firstName}</span></h1>}
       {!name && <h1>Bem vindo ao  <span>ZEN Blog</span></h1>}
       <h2>Veja nossos posts mais recentes</h2>
       <form onSubmit={handleSubmit}>

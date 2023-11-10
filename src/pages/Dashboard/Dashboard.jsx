@@ -11,7 +11,7 @@ export default function Dashboard(){
     const name = user.displayName
     const firstName = name.split(" ")[0]
    
-    const posts = []
+    const {documents: posts, loading} = useFetchDocuments("posts", null, uid)
 
     return(
         <div className={styles.dashboardContainer}>
@@ -26,6 +26,9 @@ export default function Dashboard(){
                 <div>
                     <p>tem post!</p>
                 </div>
+            )}
+            {posts && posts.map((post) => 
+                <h3>{post.title}</h3>
             )}
         </div>
     )
