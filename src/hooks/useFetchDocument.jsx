@@ -35,7 +35,7 @@ export const useFetchDocument = (docCollection, id) => {
 
         }
         loadDocument()
-    }, [docCollection, id])
+    }, [docCollection, id, cancelled])
 
     useEffect(()=> {
         return () => setCancelled(true)
