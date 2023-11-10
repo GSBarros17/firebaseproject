@@ -13,10 +13,10 @@ export default function Search(){
     
     return (
         <div className={styles.searchContainer}>
-            <h2>Pesquisa</h2>
+            <h1>Pesquisa</h1>
             <div className={styles.searchPosts}>
                 {posts && posts.length === 0 && (
-                    <div>
+                    <div className={styles.noPosts}>
                         <p>Não foram encontrados posts na sua perquisa.</p>
                         <Link to="/" className="">Voltar</Link>
                     </div>

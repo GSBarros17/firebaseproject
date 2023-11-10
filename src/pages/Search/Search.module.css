@@ -1,0 +1,41 @@
+.searchContainer{
+    text-align: center;
+    padding: 1em;
+}
+
+.searchContainer h1{
+    color: #c5375d;
+    font-family: 'Playpen Sans', cursive; 
+}
+
+.searchPosts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.noPosts{
+    text-align: center;
+}
+
+.noPosts p{
+    color: #7c7c7c;
+    margin-bottom: 2em;
+}
+
+.noPosts a{
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    border: 1px solid #c5375d;
+    margin-top: 1em;
+    font-weight: bold;
+    color: #c5375d;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.noPosts a:hover{
+    background-color: #c5375d;
+    color: #f9f9f9;
+}

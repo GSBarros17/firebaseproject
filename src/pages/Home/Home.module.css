@@ -62,7 +62,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
 .noPosts p{
     color: #7c7c7c;
@@ -77,10 +77,9 @@
     color: #c5375d;
     cursor: pointer;
     transition: 1s;
-  }
+}
   
 .noPosts a:hover{
     background-color: #c5375d;
     color: #f9f9f9;
-    box-shadow: 0px 0px 8px 0px #ffffff;
-  }
+}
