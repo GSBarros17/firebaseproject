@@ -10,7 +10,7 @@ export default function PostsDetails({post}){
         <div className={styles.cardTags}>
             {post.tagsArray.map((tag) => <p key={tag}><span>#</span>{tag}</p> )}
         </div>
-        <Link to={`/posts/$post.id`} className="btnForm">ler mais...</Link>
+        <Link to={`/posts/${post.id}`} className="btnForm">ler mais...</Link>
     </div>
    ) 
 }
