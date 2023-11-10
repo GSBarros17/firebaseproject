@@ -15,7 +15,7 @@ export default function Post(){
                 <>
                     <h1>{post.title}</h1>
                     <img src={post.image} alt={post.title}/>
-                    <p>{post.createdBy}</p>
+                    <p className={styles.createdBy}>{post.createdBy}</p>
                     <p>{post.body}</p>
                     <div className={styles.postTags}>
                         {post.tagsArray.map((tag) => <p key={tag}><span>#</span>{tag}</p> )}

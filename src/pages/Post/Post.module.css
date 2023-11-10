@@ -1,0 +1,40 @@
+.postContainer{
+    padding: 1em;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.postContainer h1{
+    color: #e06e2c;
+}
+
+.postContainer img{
+    width: 100%;
+    height: 500px;
+    border-radius: 25px;
+}
+
+.createdBy{
+    font-size: 0.8em;
+    font-style: italic;
+    color: #606060;
+}s
+
+.postContainer p{
+
+}
+
+.postTags{
+    display: flex;
+}
+
+.postTags p{
+    color: #606060;
+    margin-right: 0.5em;
+    font-size: 0.8em;
+}
+
+.postTags span{
+    font-weight: bold;
+    margin-right: 0.1em;
+}
