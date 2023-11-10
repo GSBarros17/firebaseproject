@@ -9,18 +9,19 @@ export default function Search(){
     const query = useQuery()
     const search = query.get("q")
 
-    const {documents: posts} = useFetchDocuments("posts", search)
-    console.log(posts)
+    const {documents: posts, loading} = useFetchDocuments("posts", search)
+    
     return (
-        <div>
-            <h2>Search</h2>
-            <div>
+        <div className={styles.searchContainer}>
+            <h2>Pesquisa</h2>
+            <div className={styles.searchPosts}>
                 {posts && posts.length === 0 && (
                     <div>
                         <p>Não foram encontrados posts na sua perquisa.</p>
                         <Link to="/" className="">Voltar</Link>
                     </div>
                 )}
+                {loading && <p>Carregando...</p>}
                 {posts && posts.map((post) => (
                     <PostsDetails key={post.id} post={post} />
                 ))}
