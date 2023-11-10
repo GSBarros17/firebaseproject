@@ -3,6 +3,7 @@ import { BsSearch } from "react-icons/bs"
 import { useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
 import { useFetchDocuments } from "../../hooks/useFetchDocuments"
+import { useAuthValue } from "../../context/AuthContext"
 import PostsDetails from "../../components/PostsDetails"
 
 
@@ -10,6 +11,9 @@ import PostsDetails from "../../components/PostsDetails"
 export default function Home () {
   
   const [query, setQuery] = useState("")
+  const {user} = useAuthValue()
+  const name = user ? user.displayName : ""
+  const firstName = name.split(" ")[0]
   const { documents: posts, loading } = useFetchDocuments("posts")
   const navigate = useNavigate()
 
@@ -23,7 +27,8 @@ export default function Home () {
 
   return (
     <div className={styles.homeContainer}>
-      <h1>Bem vindo ao  <span>ZEN Blog</span></h1>
+      {name && <h1>Bem vindo, <span>{firstName}</span></h1>}
+      {!name && <h1>Bem vindo ao  <span>ZEN Blog</span></h1>}
       <h2>Veja nossos posts mais recentes</h2>
       <form onSubmit={handleSubmit}>
         <input 
