@@ -13,23 +13,42 @@ export default function Dashboard(){
    
     const {documents: posts, loading} = useFetchDocuments("posts", null, uid)
 
+    const deleteDocument = (id) => {
+
+    }
+
+    if(loading){
+        return <p>Carregando...</p>
+    }
+
     return(
         <div className={styles.dashboardContainer}>
             <h1>Painel</h1>
-            <p><spam>{firstName}</spam>, gerencie o seus posts</p>
+            <p><span>{firstName}</span>, gerencie o seus posts</p>
             {posts && posts.length === 0 ? (
                 <div className={styles.noPosts}>
                     <p>Você não possui post ainda...</p>
                     <Link to="/createPost">Criar primeiro post</Link>
                 </div>
             ) : (
-                <div>
-                    <p>tem post!</p>
-                </div>
+                <>
+                    <div>
+                        <span>Título</span>
+                        <span>Ações</span>
+                    </div>
+                    {posts && posts.map((post) => 
+                        <div key={post.id}>
+                            <p>{post.title}</p>
+                            <div>
+                                <Link to={`/posts/${post.id}`}>Ver</Link>
+                                <Link to={`/edit/${post.id}`}>Editar</Link>
+                                <button onClick={()=> deleteDocument(post.id)}>Excluir</button>
+                            </div>
+                        </div>
+                    )}
+                </>
             )}
-            {posts && posts.map((post) => 
-                <h3>{post.title}</h3>
-            )}
+            
         </div>
     )
 }
