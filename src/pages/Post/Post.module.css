@@ -11,6 +11,7 @@
 .postContainer img{
     height: 500px;
     border-radius: 25px;
+    width: 100%;
 }
 
 .createdBy{
