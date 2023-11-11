@@ -32,14 +32,14 @@ export default function Dashboard(){
                 </div>
             ) : (
                 <>
-                    <div>
+                    <div className={styles.postsInfo}>
                         <span>Título</span>
                         <span>Ações</span>
                     </div>
                     {posts && posts.map((post) => 
-                        <div key={post.id}>
+                        <div key={post.id} className={styles.postsDetails}>
                             <p>{post.title}</p>
-                            <div>
+                            <div className={styles.postAction}>
                                 <Link to={`/posts/${post.id}`}>Ver</Link>
                                 <Link to={`/edit/${post.id}`}>Editar</Link>
                                 <button onClick={()=> deleteDocument(post.id)}>Excluir</button>
