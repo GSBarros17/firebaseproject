@@ -12,43 +12,45 @@ export default function Navbar () {
   const {logout} = useAuthentication()
 
   return (
-    <nav className={styles.navbar}>
-        <Link to="/">
-            <img src={ImgLogo} alt="" />
-        </Link>
-        <ul className={styles.NavItens}>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            {!user && (
-             <>
+    <div className={styles.navContainer}>
+        <nav className={styles.navbar}>
+            <Link to="/">
+                <img src={ImgLogo} alt="" />
+            </Link>
+            <ul className={styles.NavItens}>
                 <li>
-                    <Link to="/login">Entrar</Link>
+                    <Link to="/">Home</Link>
                 </li>
+                {!user && (
+                <>
+                    <li>
+                        <Link to="/login">Entrar</Link>
+                    </li>
+                    <li>
+                        <Link to="/register">Cadastro</Link>
+                    </li>
+                </>
+                )}
+                {user && (
+                <>
+                    <li>
+                        <Link to="/dashboard">Painel</Link>
+                    </li>
+                    <li>
+                        <Link to="/createpost">Novo Post</Link>
+                    </li>
+                </>
+                )}
                 <li>
-                    <Link to="/register">Cadastro</Link>
+                    <Link to="/about">Sobre</Link>
                 </li>
-             </>
-            )}
-            {user && (
-             <>
-                <li>
-                    <Link to="/dashboard">Painel</Link>
-                </li>
-                <li>
-                    <Link to="/createpost">Novo Post</Link>
-                </li>
-             </>
-            )}
-            <li>
-                <Link to="/about">Sobre</Link>
-            </li>
-            {user && (
-                <li>
-                    <button onClick={logout}>Sair</button>
-                </li>
-            )}  
-        </ul>
-    </nav>
+                {user && (
+                    <li>
+                        <button onClick={logout}>Sair</button>
+                    </li>
+                )}  
+            </ul>
+        </nav>
+    </div>
   )
 }

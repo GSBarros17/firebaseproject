@@ -49,7 +49,7 @@ function App() {
       <AuthProvider value={{user}}>
           <BrowserRouter>
               <Navbar />
-                <div className="container">
+                <div className="containerElements">
                   <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/about" element={<About/>}/>
