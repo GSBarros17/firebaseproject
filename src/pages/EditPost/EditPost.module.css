@@ -1,0 +1,24 @@
+.editPostContainer{
+    text-align: center;
+    padding: 1em;
+}
+
+.editPostContainer h1{
+    color: #c5375d;
+    font-family: 'Playpen Sans', cursive;
+}
+
+.textEditPostContainer{
+    color: #7c7c7c;
+}
+
+.textPreviewImage{
+    color: #f9f9f9;
+    text-align: left;
+    font-weight: bold;
+}
+
+.previewImage{
+    width: 100%;
+    height: 400px;
+}
