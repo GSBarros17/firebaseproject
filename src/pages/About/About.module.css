@@ -1,5 +1,6 @@
 .about{
     text-align: center;
+    margin-top: 100px;
 }
 
 .about h1{
@@ -12,7 +13,7 @@
 }
 
 .about img{
-    width: 20%;
+    width: 30%;
 }
 
 .about p{
