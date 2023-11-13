@@ -84,6 +84,10 @@ export default function useAuthentication (){
 
             if(error.message.includes("invalid")){
                 systemErrorMessage = "Usuário não cadastrado ou senha incorreta."
+            } else if(error.message.includes("password")) {
+                systemErrorMessage = "Senha não informada, digite a senha por favor!"
+            } else {
+                systemErrorMessage = "Ocorreu um erro, tente mais tarde."
             }
             setLoading(false)
             setError(systemErrorMessage)
@@ -106,11 +110,14 @@ export default function useAuthentication (){
 
             if(data.email === ("")){
                 systemErrorMessage = "Digite o e-mail para redefinir a senha"
-            } else{
+            }else if(error.message.includes("invalid")){
+                systemErrorMessage = "E-mail não cadastrado"
+            }else{
                 systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde."
             }
             setLoading(false)
-            setError(systemErrorMessage)  
+            setError(systemErrorMessage) 
+            console.log(systemErrorMessage) 
         }
         setLoading(false)
     }
