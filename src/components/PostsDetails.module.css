@@ -11,6 +11,7 @@
 
 .postsCard h2{
     color: #f9f9f9;
+    margin: 0;
 }
 
 .postsCard img{
@@ -31,6 +32,7 @@
     font-size: 0.8em;
     font-style: italic;
     color: #d6d6d6;
+    margin-bottom: 0;
 }
 
 .cardTags{
