@@ -15,7 +15,7 @@ export default function Navbar () {
     <div className={styles.navContainer}>
         <nav className={styles.navbar}>
             <Link to="/">
-                <img src={ImgLogo} alt="" />
+                <img src={ImgLogo} alt="logo zenblog" />
             </Link>
             <ul className={styles.NavItens}>
                 <li>
