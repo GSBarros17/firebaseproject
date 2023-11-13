@@ -72,6 +72,7 @@
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
+    background-color: transparent;
     color: #c5375d;
     cursor: pointer;
     transition: 1s;
