@@ -120,7 +120,7 @@ export default function EditPost(){
                                 onChange={(e) => setTags(e.target.value)}
                             />
                         </label>
-                        {!response.loading && <button className="btnForm">Editar</button>}
+                        {!response.loading && <button className="btnForm">Salvar</button>}
                         {response.loading && <button className="btnForm">Aguarde...</button>}
                     </form>
                     {response.error && <p className="err">{response.error}</p>}
