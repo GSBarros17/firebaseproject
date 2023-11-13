@@ -17,3 +17,19 @@
 .containerLogin p{
     color: #f9f9f9;
 }
+
+.recoverPassword{
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+    color: #f9f9f9;
+    border: none;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.recoverPassword:hover{
+    font-size: 0.9em;
+}

@@ -4,6 +4,7 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     updateProfile,
+    sendPasswordResetEmail,
     signOut
 } from "firebase/auth"
 
@@ -76,7 +77,6 @@ export default function useAuthentication (){
         setLoading(true)
         setError(false)
         try {
-           
             await signInWithEmailAndPassword(auth, data.email, data.password)
             setLoading(true)
         } catch (error) {
@@ -84,14 +84,35 @@ export default function useAuthentication (){
 
             if(error.message.includes("invalid")){
                 systemErrorMessage = "Usuário não cadastrado ou senha incorreta."
+            }
+            setLoading(false)
+            setError(systemErrorMessage)
+        }
+    }
+
+    //recover - password
+    const recoverPassword = async(data) =>{
+
+        checkIfIsCancelled()
+
+        setLoading(true)
+        setError(false)
+        try {
+           
+            await sendPasswordResetEmail(auth, data.email)
+            setLoading(true)
+        } catch (error) {
+            let systemErrorMessage;
+
+            if(data.email === ("")){
+                systemErrorMessage = "Digite o e-mail para redefinir a senha"
             } else{
                 systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde."
             }
             setLoading(false)
-            setError(systemErrorMessage)
-           
+            setError(systemErrorMessage)  
         }
-
+        setLoading(false)
     }
 
     //logout - sing out
@@ -113,6 +134,7 @@ export default function useAuthentication (){
         error,
         loading,
         logout,
-        login
+        login,
+        recoverPassword
     }
 }
