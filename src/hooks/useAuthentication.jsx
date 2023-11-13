@@ -14,6 +14,7 @@ import {useState, useEffect} from "react"
 export default function useAuthentication (){
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(null)
+    const [message, setMessage] = useState(null)
 
     //cleanup
     const [cancelled, setCancelled] = useState(false)
@@ -101,10 +102,12 @@ export default function useAuthentication (){
 
         setLoading(true)
         setError(false)
+        setMessage(false)
         try {
            
             await sendPasswordResetEmail(auth, data.email)
             setLoading(true)
+            setMessage("Recuperação de senha encaminhada para o e-mail.")
         } catch (error) {
             let systemErrorMessage;
 
@@ -140,6 +143,7 @@ export default function useAuthentication (){
         createUser,
         error,
         loading,
+        message,
         logout,
         login,
         recoverPassword

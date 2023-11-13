@@ -7,8 +7,9 @@ export default function Login(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
+    const [message, setMessage] = useState("")
 
-    const {login, recoverPassword, error: authError, loading} = useAuthentication()
+    const {login, recoverPassword, error: authError, message: sendEmail, loading} = useAuthentication()
     
     const handleSubmit = async (e) =>{
         e.preventDefault()
@@ -28,7 +29,7 @@ export default function Login(){
         e.preventDefault()
 
         setError("")
-
+        setMessage("")
         const user = {
             email
         }
@@ -47,7 +48,13 @@ export default function Login(){
     
     }, [authError])
     
-
+    useEffect(() => {
+      
+        if(sendEmail){
+            setMessage(sendEmail)
+        }
+    
+    }, [sendEmail])
 
     return(
         <div className={styles.containerLogin}>
@@ -80,6 +87,7 @@ export default function Login(){
                 {!loading && <button className="btnForm">Entrar</button>}
                 {loading && <button className="btnForm">Aguarde...</button>}
             </form>
+            {message && <p className="success">{message}</p>}
             {error && <p className="err">{error}</p>}
         </div>
     )

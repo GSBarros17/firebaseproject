@@ -69,11 +69,22 @@ input:focus{
 .err{
   width: 15%;
   margin: 1em auto;
-  background-color: #fe9595;
+  background-color: #d47c7c;
   font-weight: bold;
   color: #d61212;
   border-radius: 25px;
   border: 1px solid #d61212;
+  padding: 0.2em 0.5em;  
+}
+
+.success{
+  width: 15%;
+  margin: 1em auto;
+  background-color: #7dcd76;
+  font-weight: bold;
+  color: #26d612;
+  border-radius: 25px;
+  border: 1px solid #26d612;
   padding: 0.2em 0.5em;  
 }
 
