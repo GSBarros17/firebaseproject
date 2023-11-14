@@ -12,9 +12,11 @@ export default function Navbar () {
 
   const {user} = useAuthValue()
   const {logout} = useAuthentication()
-  const { hideNavbar, setHideNavbar} = useState("false")
+  const [hideNavbar, setHideNavbar] = useState("false")
 
-  const hideNavbar = () => {}
+  const toggleClasse = () => {
+    setHideNavbar(!hideNavbar)
+  }
 
   return (
     <div className={styles.navContainer}>
@@ -22,11 +24,11 @@ export default function Navbar () {
             <Link to="/">
                 <img src={ImgLogo} alt="logo zenblog" />
             </Link>
-            <button className={styles.menuBtn}>
+            <button onClick={toggleClasse} className={styles.menuBtn}>
                 <FaBars/>
             </button>
         </section>
-        <nav className={styles.navbar}>
+        <nav className={`${styles.navbar} ${hideNavbar ? styles.navItensToggle : ''}`}>
             <ul className={styles.navItens}>
                 <li>
                     <Link to="/">Home</Link>

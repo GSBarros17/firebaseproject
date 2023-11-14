@@ -98,11 +98,16 @@
         width: 40%;
         height: 100vh;
         top: 12.1vh;
-        right: 0;
+        right: -100%;
         justify-content: flex-start;
         align-items: flex-start;
         padding: 0;
         background-color:#ffcca4;
+        transition: 1s;
+    }
+
+    .navItensToggle{
+        right: 0;
     }
 
     .navItens{
