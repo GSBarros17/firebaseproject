@@ -50,4 +50,25 @@
     margin-right: 0.1em;
 }
 
+@media screen and (max-width: 800px){
+    .postsCard{
+        width: 60%;
+    }
 
+    .postsCard img{
+        height: 300px;
+    }
+  
+}
+
+
+@media screen and (max-width: 500px){
+    .postsCard{
+        width: 80%;
+    }
+
+    .postsCard img{
+        height: 200px;
+    }
+  
+}
