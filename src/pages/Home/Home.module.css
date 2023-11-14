@@ -95,6 +95,14 @@
         width: 40%;    
     }
 
+    .homeContainer h1{
+        text-align: center;
+    }
+    
+    .homeContainer h2{
+        text-align: center;
+    }
+
 }
 
 @media screen and (max-width: 500px){
@@ -107,4 +115,13 @@
     .homeContainer form{
         width: 70%;
     }
+
+    .homeContainer h1{
+        text-align: center;
+    }
+    
+    .homeContainer h2{
+        text-align: center;
+    }
+
 }

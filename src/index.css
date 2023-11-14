@@ -106,12 +106,10 @@ textarea:focus {
   form{
     width: 60%;
   }
-
 }
 
 @media screen and (max-width: 500px){
   form{
     width: 80%;
   }
-
 }
