@@ -83,3 +83,28 @@
     background-color: #c5375d;
     color: #f9f9f9;
 }
+
+@media screen and (max-width: 800px){
+
+    .homeContainer{
+        padding: 0em;
+        margin: 1em;
+    }
+
+    .homeContainer form{
+        width: 40%;    
+    }
+
+}
+
+@media screen and (max-width: 500px){
+
+    .homeContainer{
+        padding: 0em;
+        margin: 1em;
+    }
+
+    .homeContainer form{
+        width: 70%;
+    }
+}
