@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { FaBars } from "react-icons/fa";
+import { useState } from "react"
 import useAuthentication from "../hooks/useAuthentication"
 import { useAuthValue } from "../context/AuthContext"
 import styles from "./Navbar.module.css"
@@ -11,6 +12,9 @@ export default function Navbar () {
 
   const {user} = useAuthValue()
   const {logout} = useAuthentication()
+  const { hideNavbar, setHideNavbar} = useState("false")
+
+  const hideNavbar = () => {}
 
   return (
     <div className={styles.navContainer}>
@@ -23,7 +27,7 @@ export default function Navbar () {
             </button>
         </section>
         <nav className={styles.navbar}>
-            <ul className={styles.NavItens}>
+            <ul className={styles.navItens}>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
