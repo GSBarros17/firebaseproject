@@ -101,3 +101,17 @@ textarea {
 textarea:focus {
   opacity: 1;
 }
+
+@media screen and (max-width: 800px){
+  form{
+    width: 60%;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+  form{
+    width: 80%;
+  }
+
+}
