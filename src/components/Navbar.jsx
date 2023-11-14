@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { FaBars } from "react-icons/fa";
 import useAuthentication from "../hooks/useAuthentication"
 import { useAuthValue } from "../context/AuthContext"
 import styles from "./Navbar.module.css"
@@ -13,10 +14,15 @@ export default function Navbar () {
 
   return (
     <div className={styles.navContainer}>
-        <nav className={styles.navbar}>
+        <section className={styles.headerMenu}>
             <Link to="/">
                 <img src={ImgLogo} alt="logo zenblog" />
             </Link>
+            <button className={styles.menuBtn}>
+                <FaBars/>
+            </button>
+        </section>
+        <nav className={styles.navbar}>
             <ul className={styles.NavItens}>
                 <li>
                     <Link to="/">Home</Link>
