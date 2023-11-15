@@ -1,6 +1,8 @@
 import styles from "./Post.module.css"
 import { useParams } from "react-router-dom"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
+import { Link } from "react-router-dom";
+import { BsArrowLeftSquare } from "react-icons/bs";
 
 
 export default function Post(){
@@ -10,6 +12,9 @@ export default function Post(){
     
     return (
         <div className={styles.postContainer}>
+            <Link to="/">
+                <BsArrowLeftSquare />
+            </Link>
             {loading && <p>carregando post...</p>}
             {post && (
                 <>
