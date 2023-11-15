@@ -3,6 +3,10 @@
     padding: 1em;
 }
 
+.editPostContainer a{
+    display: none;
+}
+
 .editPostContainer h1{
     color: #c5375d;
     font-family: 'Playpen Sans', cursive;
@@ -21,4 +25,34 @@
 .previewImage{
     width: 100%;
     height: 400px;
+}
+
+@media screen and (max-width: 800px){
+    .editPostContainer a{
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        padding: 0;
+        margin: 0 0.5em;
+        font-size: 1.5em;
+        color: #c5375d;
+    }
+
+    .editPostContainer h1{
+        margin: 0 1em 0.5em 1em
+
+    }
+
+    .previewImage{
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    .previewImage{
+        width: 100%;
+        height: 200px;
+    }
 }

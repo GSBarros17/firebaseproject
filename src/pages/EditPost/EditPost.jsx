@@ -3,6 +3,8 @@ import { useNavigate, useParams} from "react-router-dom"
 import { useAuthValue } from "../../context/AuthContext"
 import { useUpdateDocument } from "../../hooks/useUpdateDocument"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
+import { Link } from "react-router-dom"
+import { BsArrowLeftSquare } from "react-icons/bs";
 import styles from "./EditPost.module.css"
 
 export default function EditPost(){
@@ -72,6 +74,9 @@ export default function EditPost(){
         <div className={styles.editPostContainer}>
             {post && (
                 <>
+                    <Link to="/dashboard">
+                        <BsArrowLeftSquare />
+                    </Link>
                     <h1>Editar o post: {post.title}</h1>
                     <p className={styles.textEditPostContainer}>Edite o seu post de maneira simples!</p>
                     <form onSubmit={handleSubmit}>
