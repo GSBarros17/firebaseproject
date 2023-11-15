@@ -33,3 +33,9 @@
 .recoverPassword:hover{
     font-size: 0.9em;
 }
+
+@media screen and (max-width: 800px){
+    .containerLogin h1{
+        margin-top: 0;
+    }    
+}
