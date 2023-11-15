@@ -89,6 +89,10 @@
 }
 
 @media screen and (max-width: 1000px){
+    .dashboardContainer h1{
+        padding-top: 0.5em;
+    }
+    
     .postsInfo{
         width: 75%;
     }
