@@ -52,7 +52,7 @@
 }
 
 .postsInfo span{
-    margin: 1em 0;
+    margin: 1em 2em;
 }
 
 .postsDetails{
@@ -88,3 +88,87 @@
     color: #f9f9f9;
 }
 
+@media screen and (max-width: 1000px){
+    .postsInfo{
+        width: 75%;
+    }
+
+    .postsDetails{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .dashboardContainer{
+        padding: 0em;
+        margin: 1em;
+        text-align: center;
+    }
+
+    .postsInfo{
+        width: 90%;
+    }
+
+    .postsDetails{
+        width: 90%;
+    }
+    
+    .postAction{
+        display: flex;
+    
+    }
+    
+    .postAction a, .postAction button{
+        margin: 0 0.5em;
+        padding: 0.4em 1em;
+    }
+
+    .postAction a{
+        background-color: #c5375d;
+        color: #f9f9f9;
+    }
+    
+    .postAction button{
+        background-color: #c53737;
+        color: #f9f9f9;
+    }
+  
+}
+
+
+@media screen and (max-width: 500px){
+    .dashboardContainer{
+        padding: 0em;
+        margin: 1em;
+        text-align: center;
+    }
+
+    .postsInfo{
+        width: 100%;
+    }
+
+    .postsDetails{
+        width: 100%;
+    }
+    
+    .postAction{
+        display: flex;
+        flex-direction: column;
+        margin: 0.5em;
+    }
+    
+    .postAction a, .postAction button{
+        margin: 0.5em 0;
+        padding: 0.4em 1em;
+    }
+
+    .postAction a{
+        background-color: #c5375d;
+        color: #f9f9f9;
+    }
+    
+    .postAction button{
+        background-color: #c53737;
+        color: #f9f9f9;
+    }
+}
