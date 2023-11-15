@@ -12,3 +12,8 @@
     color: #7c7c7c;
 }
 
+@media screen and (max-width: 800px){
+    .registerContainer h1{
+        margin-top: 0;
+    }    
+}
