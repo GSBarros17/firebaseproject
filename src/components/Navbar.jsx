@@ -28,7 +28,7 @@ export default function Navbar () {
                 <FaBars/>
             </button>
         </section>
-        <nav className={`${styles.navbar} ${hideNavbar ? styles.navItensToggle : ''}`}>
+        <nav className={`${styles.navbar} ${!hideNavbar ? styles.navItensToggle : ''}`}>
             <ul className={styles.navItens}>
                 <li>
                     <Link to="/">Home</Link>

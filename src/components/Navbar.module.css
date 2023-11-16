@@ -25,8 +25,8 @@
 
 .navbar{
     display: flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: flex-end;
+    align-items: flex-end;
     padding: 0.5em 1em 0 1em;
     background-color:#ffcca4;
 }
@@ -87,7 +87,7 @@
         background-color: transparent;
         border: none;
         font-size: 1em;
-        justify-content: end;
+        justify-content: flex-end;
         padding: 1em;
         cursor: pointer;     
     }
