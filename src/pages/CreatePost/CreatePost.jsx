@@ -4,10 +4,12 @@ import { useAuthValue } from "../../context/AuthContext"
 import { useInsertDocument } from "../../hooks/useInsertDocument"
 import styles from "./CreatePost.module.css"
 
+const MAX_FILE_SIZE_KB = 500;
+
 export default function CreatePost(){
 
     const [title, setTitle] = useState("")
-    const [image, setImage] = useState("")
+    const [fileImage, setFileImage] = useState("null")
     const [body, setBody] = useState("")
     const [tags, setTags] = useState("")
     const [formError, setFormError] = useState("")
@@ -16,20 +18,41 @@ export default function CreatePost(){
     const {user} = useAuthValue()
     const navigate = useNavigate()
 
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        setFormError("")
+    
+        if (file) {
+            const fileSizeInKB = file.size / 1024;
+            if (fileSizeInKB > MAX_FILE_SIZE_KB) {
+              setFormError(`O tamanho máximo do arquivo é ${MAX_FILE_SIZE_KB}KB`);
+              return;
+            }
+            const reader = new FileReader();
+    
+            reader.onload = (e) => {
+                const imageDataUrl = e.target.result;
+                setFileImage(imageDataUrl);
+            };
+        
+            reader.readAsDataURL(file);
+        }
+    };
+
     const handleSubmit = (e) =>{
         e.preventDefault()
         setFormError("")
-
+        
         //validar a URL da imagem
         try {
-            new URL(image)
+            new URL(fileImage)
         } catch (error) {
-            setFormError("A imagem precisar ser uma url")
+            setFormError("O arquivo precisa ser uma imagem")
         }
         //array de tags
         const tagsArray = tags.split(",").map((tag) =>  tag.trim().toLowerCase())
         //checar todos os valores   
-        if(!title || !image || !body || !tags){
+        if(!title || !fileImage || !body || !tags){
             setFormError("Por favor, preencha todos os campos!")
         }
         if(formError){
@@ -37,7 +60,7 @@ export default function CreatePost(){
         }
         insertDocument({
             title,
-            image,
+            image: fileImage,
             body,
             tagsArray,
             uid: user.uid,
@@ -51,7 +74,7 @@ export default function CreatePost(){
     return(
         <div className={styles.createPostContainer}>
             <h1>Criar post</h1>
-            <p>Compartilhe suas experiências com outras pessoas!</p>
+            <p className={styles.textCreatePost}>Compartilhe suas experiências com outras pessoas!</p>
             <form onSubmit={handleSubmit}>
                 <label>
                     <span>Titulo:</span>
@@ -67,12 +90,11 @@ export default function CreatePost(){
                 <label>
                     <span>Imagem:</span>
                     <input 
-                        type="text" 
-                        name="imagemURL" 
-                        required 
-                        placeholder="Cole uma URL de imagem"
-                        value={image}
-                        onChange={(e) => setImage(e.target.value)}
+                        type="file"
+                        name="fileImage"
+                        required
+                        accept="image/*"
+                        onChange={handleFileChange}
                     />
                 </label>
                 <label>
