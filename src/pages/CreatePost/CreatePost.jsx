@@ -89,6 +89,8 @@ export default function CreatePost(){
                 </label>
                 <label>
                     <span>Imagem:</span>
+                    <span className={styles.textInfoImg}>*obs: adicione somente arquivo de imagem com até 500kb.</span>
+                    <span className={styles.textInfoImg}>*obs2: aplicação não suporta fotos tiradas na camera do celular no ato do upload da imagem.</span>
                     <input 
                         type="file"
                         name="fileImage"
