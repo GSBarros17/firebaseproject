@@ -1,5 +1,4 @@
 import styles from "./About.module.css"
-import imgLogo from "../../img/Logo.png"
 import { BsPaperclip , BsGlobe2 , BsGithub , BsWhatsapp , BsLinkedin } from "react-icons/bs"
 import Devimg from "../../img/devimg.jpg"
 import Docdev from "../../docs/curriculoGuilherme.docx"
