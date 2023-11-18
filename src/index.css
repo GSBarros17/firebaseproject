@@ -106,10 +106,27 @@ textarea:focus {
   form{
     width: 60%;
   }
+
+  .err{
+    width: 30%;
+  }
+  
+  .success{
+    width: 30%;
+  }
+
 }
 
 @media screen and (max-width: 500px){
   form{
     width: 80%;
+  }
+
+  .err{
+    width: 50%;
+  }
+  
+  .success{
+    width: 50%;
   }
 }
