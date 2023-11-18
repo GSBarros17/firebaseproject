@@ -12,22 +12,86 @@
     color: #e06e2c;
 }
 
-.about img{
-    width: 30%;
-}
-
 .about p{
     color: #7c7c7c;
     margin-bottom:0em ;
 }
 
-@media screen and (max-width: 800px){
+.sectionContact{
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(to bottom right, #c5375d, #e06e2c);
+    padding: 1em;
+    border-radius: 20px;
+    width: 60%;
+    margin: 2em auto;
+}
+
+.sectionContact img{
+    border-radius: 50%;
+    border: 2px solid #f9f9f9;
+    margin-right: 2em;
+}
+
+.sectionTexts{
+    margin-top: 1em;
+}
+
+.sectionTexts h2{
+    color: #f9f9f9;
+    margin-bottom: 1em;
+}
+
+.sectionTexts p{
+    color: #f9f9f9;
+    margin-bottom: 1em;
+}
+
+.sectionTexts h3{
+    color: #f9f9f9;
+    margin-bottom: 1em;
+}
+
+.socialMidia{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+.socialMidia a{
+    margin-right: 1em;
+    color: #f9f9f9;
+    font-size: 2.5em;
+    transition: .5s;
+}
+
+.socialMidia a:hover{
+    color: #c5375d;
+}
+
+@media screen and (max-width: 1240px){
     .about{
         margin-top: 80px;
         padding: 0 2em;
     }
 
-    .about img{
+    .sectionContact{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sectionContact img{
         width: 50%;
+        border-radius: 50%;
+        border: 2px solid #f9f9f9;
+        margin-right: 0;
+    }
+
+    .socialMidia a{
+        margin: 0 0.5em;
     }
 }

@@ -10,11 +10,10 @@ export default function About () {
       <h1>Sobre o <span>ZEN BLOG</span></h1>
       <p>O blog surgiu a partir de um curso de react do professor Matheus Battisti.</p>
       <p>O projeto possui React no Front-end e Firebase no Back-end.</p>
-      <img src={imgLogo} alt="" />
       <div className={styles.sectionContact}>
                 <img src={Devimg} alt="imagem do desenvolvedor"/>
                 <div className={styles.sectionTexts}>
-                    <h2>Olá, me chamo <span>Guilherme Barros.</span></h2>
+                    <h2>Olá, me chamo Guilherme Barros.</h2>
                     <p>Sou o responsável por desenvolver esta página!</p>
                     <h3>Caso você tenha interesse no meu trabalho,
                     entre em contato comigo pelas minhas redes sociais:</h3>
