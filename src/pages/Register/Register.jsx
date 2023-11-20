@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import useAuthentication from "../../hooks/useAuthentication"
 import styles from "./Register.module.css"
 
@@ -12,7 +13,8 @@ export default function Register(){
     const [error, setError] = useState("")
 
     const {createUser, error: authError, loading} = useAuthentication()
-    
+    const navigate = useNavigate()
+
     const handleSubmit = async (e) =>{
         e.preventDefault()
 
@@ -32,6 +34,8 @@ export default function Register(){
         const res = await createUser(user)
         console.log(res)
 
+        navigate("/")
+
     }
 
     useEffect(() => {
@@ -48,7 +52,7 @@ export default function Register(){
             <h1>Cadastre-se e faça parte desta comunidade</h1>
             <p>Crie sua conta para realizar postagens</p>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="">
+                <label>
                     <span>Nome:</span>
                     <input 
                         type="text" 
@@ -59,7 +63,7 @@ export default function Register(){
                         onChange={(e) => setName(e.target.value)}
                     />
                 </label>
-                <label htmlFor="">
+                <label>
                     <span>E-mail:</span>
                     <input 
                         type="email" 
@@ -70,7 +74,7 @@ export default function Register(){
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </label>
-                <label htmlFor="">
+                <label>
                     <span>Senha:</span>
                     <input 
                         type="password"
@@ -81,7 +85,7 @@ export default function Register(){
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </label>
-                <label htmlFor="">
+                <label>
                     <span>Confirmação de senha:</span>
                     <input 
                         type="password"

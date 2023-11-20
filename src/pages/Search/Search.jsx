@@ -18,7 +18,7 @@ export default function Search(){
                 {posts && posts.length === 0 && (
                     <div className={styles.noPosts}>
                         <p>Não foram encontrados posts na sua perquisa.</p>
-                        <Link to="/" className="">Voltar</Link>
+                        <Link to="/">Voltar</Link>
                     </div>
                 )}
                 {loading && <p>Carregando...</p>}
