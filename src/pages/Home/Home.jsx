@@ -12,8 +12,7 @@ export default function Home () {
   
   const [query, setQuery] = useState("")
   const {user} = useAuthValue()
-  const name = user ? user.displayName : ""
-  const firstName = name.split(" ")[0]
+  const firstName = user && user.displayName ? user.displayName.split(" ")[0] : "";
   const { documents: posts, loading } = useFetchDocuments("posts")
   const navigate = useNavigate()
 
@@ -27,8 +26,8 @@ export default function Home () {
 
   return (
     <div className={styles.homeContainer}>
-      {name && <h1>Bem vindo(a), <span>{firstName}</span></h1>}
-      {!name && <h1>Bem vindo(a) ao  <span>ZEN Blog</span></h1>}
+      {firstName && <h1>Bem vindo(a), <span>{firstName}</span></h1>}
+      {!firstName && <h1>Bem vindo(a) ao  <span>ZEN Blog</span></h1>}
       <h2>Veja nossos posts mais recentes</h2>
       <form onSubmit={handleSubmit}>
         <input 

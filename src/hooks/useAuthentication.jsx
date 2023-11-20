@@ -7,7 +7,6 @@ import {
     signOut
 } from "firebase/auth"
 
-
 import {useState, useEffect} from "react"
 
 export default function useAuthentication (){
