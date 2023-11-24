@@ -12,7 +12,7 @@ export default function Navbar () {
 
   const {user} = useAuthValue()
   const {logout} = useAuthentication()
-  const [hideNavbar, setHideNavbar] = useState(false)
+  const [hideNavbar, setHideNavbar] = useState("false")
 
   const toggleClasse = () => {
     setHideNavbar(!hideNavbar)
