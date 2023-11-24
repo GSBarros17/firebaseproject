@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { FaBars } from "react-icons/fa";
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import useAuthentication from "../hooks/useAuthentication"
 import { useAuthValue } from "../context/AuthContext"
 import styles from "./Navbar.module.css"
@@ -12,14 +12,30 @@ export default function Navbar () {
 
   const {user} = useAuthValue()
   const {logout} = useAuthentication()
-  const [hideNavbar, setHideNavbar] = useState("false")
+  const [hideNavbar, setHideNavbar] = useState(false)
 
   const toggleClasse = () => {
     setHideNavbar(!hideNavbar)
   }
 
+  const handleClickOutside = (e) =>{
+    const navbarRef = navbarContainerRef.current
+    if (navbarRef && !navbarRef.contains(e.target)) {
+        setHideNavbar(true)
+    }
+  }
+
+  useEffect(()=> {
+    document.addEventListener("click", handleClickOutside)
+    return () => {
+        document.removeEventListener("click", handleClickOutside)
+    }
+  }, [])
+
+  const navbarContainerRef = useRef(null)
+
   return (
-    <div className={styles.navContainer}>
+    <div className={styles.navContainer} ref={navbarContainerRef}>
         <section className={styles.headerMenu}>
             <Link to="/">
                 <img src={ImgLogo} alt="logo zenblog" />
