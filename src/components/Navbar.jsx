@@ -18,6 +18,10 @@ export default function Navbar () {
     setHideNavbar(!hideNavbar)
   }
 
+  const handleLinkClick = () =>{
+    setHideNavbar(true)
+  }
+
   const handleClickOutside = (e) =>{
     const navbarRef = navbarContainerRef.current
     if (navbarRef && !navbarRef.contains(e.target)) {
@@ -47,30 +51,30 @@ export default function Navbar () {
         <nav className={`${styles.navbar} ${!hideNavbar ? styles.navItensToggle : ''}`}>
             <ul className={styles.navItens}>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" onClick={handleLinkClick}>Home</Link>
                 </li>
                 {!user && (
                 <>
                     <li>
-                        <Link to="/login">Entrar</Link>
+                        <Link to="/login" onClick={handleLinkClick}>Entrar</Link>
                     </li>
                     <li>
-                        <Link to="/register">Cadastro</Link>
+                        <Link to="/register" onClick={handleLinkClick}>Cadastro</Link>
                     </li>
                 </>
                 )}
                 {user && (
                 <>
                     <li>
-                        <Link to="/dashboard">Painel</Link>
+                        <Link to="/dashboard" onClick={handleLinkClick}>Painel</Link>
                     </li>
                     <li>
-                        <Link to="/createpost">Novo Post</Link>
+                        <Link to="/createpost" onClick={handleLinkClick}>Novo Post</Link>
                     </li>
                 </>
                 )}
                 <li>
-                    <Link to="/about">Sobre</Link>
+                    <Link to="/about" onClick={handleLinkClick}>Sobre</Link>
                 </li>
                 {user && (
                     <li>
