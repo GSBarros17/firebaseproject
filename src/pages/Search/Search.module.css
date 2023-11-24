@@ -2,6 +2,10 @@
     padding: 1em;
 }
 
+.searchReturn{
+    display: none;
+}
+
 .searchContainer h1{
     color: #c5375d;
     font-family: 'Playpen Sans', cursive;
@@ -38,4 +42,20 @@
 .noPosts a:hover{
     background-color: #c5375d;
     color: #f9f9f9;
+}
+
+@media screen and (max-width: 800px){
+    .searchContainer h1{
+        margin: 0;
+    }
+    
+    .searchReturn{
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        padding: 0;
+        margin: 0 0.5em;
+        font-size: 1.5em;
+        color: #c5375d;
+    }
 }

@@ -3,6 +3,7 @@ import { useFetchDocuments } from "../../hooks/useFetchDocuments"
 import { useQuery } from "../../hooks/useQuery"
 import { Link } from "react-router-dom"
 import PostsDetails from "../../components/PostsDetails"
+import { BsArrowLeftSquare } from "react-icons/bs"
 
 
 export default function Search(){
@@ -13,6 +14,9 @@ export default function Search(){
     
     return (
         <div className={styles.searchContainer}>
+            <Link to="/" className={styles.searchReturn}>
+                <BsArrowLeftSquare />
+            </Link>
             <h1>Pesquisa</h1>
             <div className={styles.searchPosts}>
                 {posts && posts.length === 0 && (

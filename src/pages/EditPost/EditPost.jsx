@@ -4,10 +4,10 @@ import { useAuthValue } from "../../context/AuthContext"
 import { useUpdateDocument } from "../../hooks/useUpdateDocument"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
 import { Link } from "react-router-dom"
-import { BsArrowLeftSquare } from "react-icons/bs";
+import { BsArrowLeftSquare } from "react-icons/bs"
 import styles from "./EditPost.module.css"
 
-const MAX_FILE_SIZE_KB = 500;
+const MAX_FILE_SIZE_KB = 500
 
 export default function EditPost(){
 
@@ -38,23 +38,23 @@ export default function EditPost(){
     const navigate = useNavigate()
 
     const handleFileChange = (e) => {
-        const file = e.target.files[0];
+        const file = e.target.files[0]
         setFormError("")
     
         if (file) {
-            const fileSizeInKB = file.size / 1024;
+            const fileSizeInKB = file.size / 1024
             if (fileSizeInKB > MAX_FILE_SIZE_KB) {
-              setFormError(`O tamanho máximo do arquivo é ${MAX_FILE_SIZE_KB}KB`);
-              return;
+              setFormError(`O tamanho máximo do arquivo é ${MAX_FILE_SIZE_KB}KB`)
+              return
             }
-            const reader = new FileReader();
+            const reader = new FileReader()
     
             reader.onload = (e) => {
-                const imageDataUrl = e.target.result;
-                setFileImage(imageDataUrl);
+                const imageDataUrl = e.target.result
+                setFileImage(imageDataUrl)
             };
         
-            reader.readAsDataURL(file);
+            reader.readAsDataURL(file)
         }
     };
 
