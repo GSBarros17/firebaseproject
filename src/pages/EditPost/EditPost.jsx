@@ -152,8 +152,8 @@ export default function EditPost(){
                         {!response.loading && <button className="btnForm">Salvar</button>}
                         {response.loading && <button className="btnForm">Aguarde...</button>}
                     </form>
-                    {response.error && <p className="err">{response.error}</p>}
-                    {formError && <p className="err">{formError}</p>}
+                    {response.error && <h4 className="err">{response.error}</h4>}
+                    {formError && <h4 className="err">{formError}</h4>}
                 </>
             )}
         </div>
