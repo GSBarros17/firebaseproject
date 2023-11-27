@@ -24,13 +24,16 @@ export default function Register(){
             password
         }
 
-        if(password !== confirmPassword){
-            setError("As senhas precisam ser iguais!")
-            return
-        }
+       if (name.trim() === "" || email.trim() === "" || password.trim() === "") {
+        setError("Preencha todos os campos");
+        return;
+       } else if (password !== confirmPassword) {
+        setError("As senhas precisam ser iguais!");
+        return;
+       }
 
-        const res = await createUser(user)
-        console.log(res)
+       const res = await createUser(user)
+       console.log(res)
 
     }
 
@@ -52,8 +55,7 @@ export default function Register(){
                     <span>Nome:</span>
                     <input 
                         type="text" 
-                        name="nameUser" 
-                        required 
+                        name="nameUser"
                         placeholder="Digite seu nome completo"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -64,7 +66,6 @@ export default function Register(){
                     <input 
                         type="email" 
                         name="emailUser" 
-                        required 
                         placeholder="Digite seu e-mail"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -75,7 +76,6 @@ export default function Register(){
                     <input 
                         type="password"
                         name="passwordUser" 
-                        required 
                         placeholder="Digite sua senha"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -86,7 +86,6 @@ export default function Register(){
                     <input 
                         type="password"
                         name="confirmPasswordUser" 
-                        required 
                         placeholder="Confirme a sua senha"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
