@@ -44,3 +44,25 @@
 .linksContainer a{
     margin: .5em;
 }
+
+@media screen and (max-width: 800px){
+    .welcomeContainer{
+        margin-top: 80px;
+    }
+
+    .welcomeCard{
+        text-align: center;
+    }
+}
+  
+@media screen and (max-width: 500px){
+    .welcomeCard img{
+        width: 40%;
+    }
+
+    .linksContainer{
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 0;
+    }
+}
