@@ -49,7 +49,7 @@ export default function Register(){
     return(
         <div className={styles.registerContainer}>
             <h1>Cadastre-se e faça parte desta comunidade</h1>
-            <p className={styles.registerText}>Crie sua conta para realizar postagens</p>
+            <p>Crie sua conta para realizar postagens</p>
             <form onSubmit={handleSubmit}>
                 <label>
                     <span>Nome:</span>
@@ -94,7 +94,7 @@ export default function Register(){
                 {!loading && <button className="btnForm">Cadastrar</button>}
                 {loading && <button className="btnForm">Aguarde...</button>}
             </form>
-            {error && <p className="err">{error}</p>}
+            {error && <h4 className="err">{error}</h4>}
         </div>
         
     )
