@@ -62,18 +62,23 @@ export default function EditPost(){
         e.preventDefault()
         setFormError("")
 
+        //array de tags
+        const tagsArray = tags.split(",").map((tag) =>  tag.trim().toLowerCase())
+
+        //checar todos os valores   
+        if(!title || !fileImage || !body || !tags){
+            setFormError("Por favor, preencha todos os campos!")
+            return
+        }
+
         //validar a URL da imagem
         try {
             new URL(fileImage)
         } catch (error) {
             setFormError("A imagem precisar ser uma url")
+            return
         }
-        //array de tags
-        const tagsArray = tags.split(",").map((tag) =>  tag.trim().toLowerCase())
-        //checar todos os valores   
-        if(!title || !fileImage || !body || !tags){
-            setFormError("Por favor, preencha todos os campos!")
-        }
+
         if(formError){
             return
         }
@@ -108,7 +113,6 @@ export default function EditPost(){
                             <input 
                                 type="text" 
                                 name="title" 
-                                required 
                                 placeholder="Escreva um titulo para o seu post"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
@@ -121,7 +125,6 @@ export default function EditPost(){
                             <input 
                                 type="file"
                                 name="fileImage"
-                                required
                                 accept="image/*"
                                 onChange={handleFileChange}
                             />
@@ -132,8 +135,7 @@ export default function EditPost(){
                             <span>Conteúdo:</span>
                             <textarea 
                                 name="body" 
-                                placeholder="Escreva sobre o que você quer falar"
-                                required 
+                                placeholder="Escreva sobre o que você quer falar" 
                                 value={body}
                                 onChange={(e) => setBody(e.target.value)}
                             ></textarea>
@@ -143,7 +145,6 @@ export default function EditPost(){
                             <input 
                                 type="text" 
                                 name="tags" 
-                                required 
                                 placeholder="Insira as tags separadas por virgulas"
                                 value={tags}
                                 onChange={(e) => setTags(e.target.value)}
