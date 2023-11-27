@@ -43,21 +43,27 @@ export default function CreatePost(){
         e.preventDefault()
         setFormError("")
         
+        //array de tags
+        const tagsArray = tags.split(",").map((tag) =>  tag.trim().toLowerCase())
+       
+        //checar todos os valores
+        if(!title || !fileImage || !body || !tags){
+            setFormError("Por favor, preencha todos os campos!")
+            return
+        }
+
         //validar a URL da imagem
         try {
             new URL(fileImage)
         } catch (error) {
             setFormError("O arquivo precisa ser uma imagem")
+            return
         }
-        //array de tags
-        const tagsArray = tags.split(",").map((tag) =>  tag.trim().toLowerCase())
-        //checar todos os valores   
-        if(!title || !fileImage || !body || !tags){
-            setFormError("Por favor, preencha todos os campos!")
-        }
+
         if(formError){
             return
         }
+        
         insertDocument({
             title,
             image: fileImage,
@@ -81,7 +87,6 @@ export default function CreatePost(){
                     <input 
                         type="text" 
                         name="title" 
-                        required 
                         placeholder="Escreva um titulo para o seu post"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
@@ -94,7 +99,6 @@ export default function CreatePost(){
                     <input 
                         type="file"
                         name="fileImage"
-                        required
                         accept="image/*"
                         onChange={handleFileChange}
                     />
@@ -104,7 +108,6 @@ export default function CreatePost(){
                     <textarea 
                         name="body" 
                         placeholder="Escreva sobre o que você quer falar"
-                        required 
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                     ></textarea>
@@ -113,8 +116,7 @@ export default function CreatePost(){
                     <span>Tags:</span>
                     <input 
                         type="text" 
-                        name="tags" 
-                        required 
+                        name="tags"
                         placeholder="Insira as tags separadas por virgulas"
                         value={tags}
                         onChange={(e) => setTags(e.target.value)}
