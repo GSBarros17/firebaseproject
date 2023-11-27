@@ -20,7 +20,11 @@ export default function Login(){
             email,
             password
         }
-
+        
+        if (email.trim() === "" || password.trim() === "") {
+            setError("Preencha todos os campos");
+            return;
+        }
         const res = await login(user)
         console.log(res)
 
@@ -68,7 +72,6 @@ export default function Login(){
                     <input 
                         type="email" 
                         name="emailUser" 
-                        required 
                         placeholder="Digite seu e-mail"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -88,8 +91,8 @@ export default function Login(){
                 {!loading && <button className="btnForm">Entrar</button>}
                 {loading && <button className="btnForm">Aguarde...</button>}
             </form>
-            {message && <p className="success">{message}</p>}
-            {error && <p className="err">{error}</p>}
+            {message && <h4 className="success">{message}</h4>}
+            {error && <h4 className="err">{error}</h4>}
         </div>
     )
 }
