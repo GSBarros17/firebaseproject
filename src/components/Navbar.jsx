@@ -64,14 +64,14 @@ export default function Navbar () {
                 </>
                 )}
                 {user && (
-                <>
-                    <li>
-                        <Link to="/dashboard" onClick={handleLinkClick}>Painel</Link>
-                    </li>
-                    <li>
-                        <Link to="/createpost" onClick={handleLinkClick}>Novo Post</Link>
-                    </li>
-                </>
+                    <>
+                        <li>
+                            <Link to="/dashboard" onClick={handleLinkClick}>Painel</Link>
+                        </li>
+                        <li>
+                            <Link to="/createpost" onClick={handleLinkClick}>Novo Post</Link>
+                        </li>
+                    </>
                 )}
                 <li>
                     <Link to="/about" onClick={handleLinkClick}>Sobre</Link>
