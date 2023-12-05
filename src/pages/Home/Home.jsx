@@ -15,7 +15,6 @@ export default function Home () {
   const firstName = user && user.displayName ? user.displayName.split(" ")[0] : "";
   const firstNameCapital = firstName.charAt(0).toUpperCase() + firstName.slice(1);
   const { documents: posts, loading } = useFetchDocuments("posts")
-  console.log(posts)
   const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault()
